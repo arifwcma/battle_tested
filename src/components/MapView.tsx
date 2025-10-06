@@ -34,7 +34,12 @@ export default function MapView() {
         new Map({
             target: mapRef.current,
             layers: [rasters, boundary],
-            view: new View({ center: [0, 0], zoom: 2 })
+            view: new View({
+                center: [142.7761, -37.0574],
+                zoom: 11,
+                projection: "EPSG:4326"
+            })
+
         })
     }, [])
     return <div ref={mapRef} style={{ width: "100%", height: "100vh" }} />
